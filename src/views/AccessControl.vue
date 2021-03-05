@@ -26,7 +26,7 @@
         </v-col>
 
         <!-- INSERT NEW USB FLASH CARD -->
-        <v-btn fab absolute class="btn-bl" dark color="green" @click="toggleFlashCardProxy">
+        <v-btn fab fixed class="btn-bl" dark color="green" @click="toggleFlashCardProxy">
             <v-icon>{{ usbIcon }}</v-icon>
         </v-btn>
         <v-snackbar v-model="snackbar" timeout="5000" top :color="snackbarError ? 'red' : 'default'">
@@ -40,7 +40,7 @@
         </v-snackbar>
 
         <!-- ADD NEW FILE -->
-        <v-btn fab absolute class="btn-br" dark color="indigo" @click="dialogNewFile = true">
+        <v-btn fab fixed class="btn-br" dark color="indigo" @click="dialogNewFile = true">
             <v-icon>{{ fileAdd }}</v-icon>
         </v-btn>
         <v-dialog v-model="dialogNewFile" width="500">

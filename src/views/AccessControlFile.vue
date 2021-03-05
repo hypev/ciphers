@@ -11,7 +11,19 @@
                 </v-breadcrumbs>
             </v-card>
         </v-col>
-        <v-col cols="6" offset="3" v-if="currentFile.passwordMatched">
+        <v-col
+            cols="12"
+            offset="0"
+            xl="6"
+            offset-xl="3"
+            lg="6"
+            offset-lg="3"
+            md="6"
+            offset-md="3"
+            sm="12"
+            offset-sm="0"
+            v-if="currentFile.passwordMatched"
+        >
             <v-card>
                 <v-card-title>
                     {{ currentFile.name }}
@@ -26,13 +38,10 @@
                     <v-btn text color="deep-purple lighten-3">
                         Edit file
                     </v-btn>
-                    <v-btn text color="deep-purple lighten-3">
-                        Change password to this file
-                    </v-btn>
                 </v-card-actions>
             </v-card>
         </v-col>
-        <v-col cols="4" offset="4" v-else>
+        <v-col cols="12" offset="0" xl="6" offset-xl="3" lg="6" offset-lg="3" md="6" offset-md="3" sm="12" offset-sm="0" v-else>
             <v-alert prominent type="error">
                 <v-row align="center">
                     <v-col class="grow">
