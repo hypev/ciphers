@@ -31,7 +31,7 @@
 import gsap from "gsap";
 
 export default {
-  name: "BlowfishAnimation",
+  name: "RSAAnimation",
 
   props: {
     disabled: {

@@ -121,6 +121,8 @@
 <script>
 import { mapGetters, mapActions } from "vuex";
 const bcrypt = require("bcryptjs");
+import RSA from "node-rsa";
+import { publicKey } from "../plugins/accessControlKeys.js";
 
 import { mdiCog } from "@mdi/js";
 import { mdiUsbFlashDrive } from "@mdi/js";
@@ -192,10 +194,14 @@ export default {
 
         addFileProxy() {
             const passwordHash = bcrypt.hashSync(this.newFilePassword, 10);
+            let key = RSA();
+            key.setOptions({ encryptionScheme: "pkcs1" });
+            key.importKey(publicKey, "pkcs1-public");
+            let content = key.encrypt(this.newFileContent, "base64");
             this.addFile({
                 id: this.lastId,
                 name: this.newFileName,
-                content: this.newFileContent,
+                content: content,
                 password: passwordHash,
                 passwordMatched: false,
                 tryCount: 0,

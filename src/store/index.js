@@ -42,7 +42,7 @@ export default new Vuex.Store({
         EDIT_FILE(state, newFile) {
             const index = state.files.findIndex((file) => file.id === newFile.id);
             if (index != -1) {
-                state.files.splice(index, 1, newFile);
+                state.files[index] = newFile;
                 localStorage.setItem("files", JSON.stringify(state.files));
             }
         },
