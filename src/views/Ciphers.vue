@@ -113,7 +113,7 @@ export default {
             firstText: "Kurabanli Ruslan",
             algos: ["Ceaser", "Vigener", "Playfair", "Transposition", "Blowfish", "RSA"],
             keySizes: [512, 1024, 2048],
-            algo: "RSA",
+            algo: "",
             offset: 0,
             keySize: 512,
             publicKey: "",
