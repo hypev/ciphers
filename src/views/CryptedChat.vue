@@ -1,5 +1,5 @@
 <template>
-    <v-row style="height: calc(100vh - 210px)" class="px-6">
+    <v-row style="height: calc(100vh - 210px)">
         <v-snackbar top v-model="snackbar" timeout="10000">
             Hover to text to see hashed text
             <template v-slot:action="{ attrs }">
@@ -26,7 +26,6 @@
                                 :class="{ 'flex-row pr-8': msg.sender == 'Bob', 'flex-row-reverse pl-8': msg.sender == 'Alice' }"
                                 elevation="4"
                                 rounded="lg"
-                                style="max-width: 50%"
                             >
                                 <v-avatar color="deep-purple" class="align-self-start" size="32" rounded="circle">{{
                                     msg.sender == "Bob" ? "Bb" : "Al"
@@ -53,7 +52,7 @@
         </v-col>
         <div class="fixed-type" v-if="connected">
             <v-container>
-                <v-row class="px-6">
+                <v-row>
                     <v-col cols="12">
                         <v-card max-width="100%" class="pa-6 pb-0" elevation="12" rounded="lg">
                             <v-text-field
